@@ -1,9 +1,11 @@
-class Api::V1::ProfilesController < ApplicationController
-  doorkeeper_for :all
+module Api::V1
+  class ProfilesController < ApiController
+    doorkeeper_for :all
 
-  respond_to :json
+    respond_to :json
 
-  def index
-    respond_with Profile.all
+    def index
+      respond_with Profile.all
+    end
   end
 end
