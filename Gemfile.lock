@@ -53,6 +53,8 @@ GEM
     erubis (2.7.0)
     execjs (1.2.9)
       multi_json (~> 1.0)
+    faker (1.0.1)
+      i18n (~> 0.4)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.19)
@@ -124,6 +126,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   devise
   doorkeeper!
+  faker
   jquery-rails
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)

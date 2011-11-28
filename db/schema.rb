@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111128095701) do
+ActiveRecord::Schema.define(:version => 20111128101955) do
 
   create_table "oauth_access_grants", :force => true do |t|
     t.integer  "resource_owner_id", :null => false
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(:version => 20111128095701) do
     t.string   "uid",          :null => false
     t.string   "secret",       :null => false
     t.string   "redirect_uri", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
