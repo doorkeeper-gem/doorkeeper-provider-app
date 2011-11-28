@@ -1,0 +1,156 @@
+<div class="hero-unit">
+  <h2>Doorkeeper</h2>
+  <p><a href="https://github.com/applicake/doorkeeper">Doorkeeper</a> is an awesome <a href="http://oauth.net/2/">OAuth 2</a> provider for <a href="http://rubyonrails.org/">Rails</a>. It is built on top of <a href="http://guides.rubyonrails.org/3_1_release_notes.html">Rails 3.1</a> Engines.</p>
+  <p><a class="btn primary large" href="#about-gem">Learn more »</a></p>
+</div>
+
+<!--div class="quickstart">
+  <div class="container">
+    <div class="row">
+      <div class="span5">
+        <h6>Ready to go</h6>
+        <p>Since it uses Rails 3 engines, it is easy to integrate with your existing rails app.</p>
+        <p>Check out the <a href="#installation">installation process</a> or <a href="https://github.com/applicake/doorkeeper/wiki/_pages">read the wiki on GitHub</a></p>
+      </div>
+      <div class="span6">
+        <h6>Alpha stuff</h6>
+        <p>This gem is still in development and at the moment we only support the <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-22#section-4.1">Authorization Code</a> flow.</p>
+        <p>We encourage people to contribute, so check out the <a href="https://github.com/applicake/doorkeeper/wiki/Contributing">contribution guide here</a></p>
+      </div>
+      <div class="span5">
+        <h6>Fork it on GitHub</h6>
+        <p>It's open source!</p>
+      </div>
+    </div>
+  </div>
+</div-->
+
+<section id="about-gem">
+  <div class="page-header">
+    <h1>About the doorkeeper gem</h1>
+  </div>
+
+  <div class="row">
+    <div class="span16">
+      <p>For more information about the <a href="https://github.com/applicake/doorkeeper">gem</a>, <a href="https://github.com/applicake/doorkeeper/blob/master/README.md">installation</a>, <a href="https://github.com/applicake/doorkeeper/wiki/_pages">documentation</a> and another resources, check out the project on <a href="https://github.com/applicake/doorkeeper">GitHub</a></p>
+      <p><a target="_blank" href="https://github.com/applicake/doorkeeper" class="btn primary">Doorkeeper on GitHub »</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="about-app">
+  <div class="page-header">
+    <h1>About this app</h1>
+  </div>
+
+  <div class="row">
+    <div class="span16">
+      <p>This app is an example of an OAuth 2 provider using <a href="http://rubyonrails.org/">Rails 3.1</a> and <a href="https://github.com/plataformatec/devise">Devise</a>. Check out the <a href="https://github.com/applicake/doorkeeper-provider-app">source code</a> and <a href="#installation">installation instructions</a> for how to install it.</p>
+
+      <h4>Sample API</h4>
+      <p>This app also provides a sample JSON API under <code>/api/v1/profiles.json</code>. This is only available via OAuth so check out  how to <a href="#client">create your own client</a> or go to this <a href="http://doorkeeper-sinatra.herokuapp.com">client application built in Sinatra</a> for more details.</p>
+    </div>
+  </div>
+</section>
+
+<section id="installation">
+  <div class="page-header">
+    <h1>Getting started</h1>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h2>Installation</h2>
+    </div>
+    <div class="span12">
+      <p>First clone the <a href="https://github.com/applicake/doorkeeper-provider-app">repository from GitHub</a>:</p>
+      <pre>git clone git://github.com/applicake/doorkeeper-provider-app.git</pre>
+
+      <p>Install all dependencies with:</p>
+      <pre>bundle install</pre>
+
+      <p>After that you're almost ready to go.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h2>Configuration</h2>
+    </div>
+    <div class="span12">
+      <p>To finish the configuration, all you need to do is run:</p>
+      <pre>bundle exec rake db:setup</pre>
+
+      <p>This will generate all necessary tables, create fake data, create an user and a client application.</p>
+
+      <p>The user email is <code>user@example.com</code> and password is <code>doorkeeper</code>.</p>
+
+      <p>The application <code>id</code> and <code>secret</code> will show up on terminal.</p>
+
+      <p>After that, you can just fire up the <code>rails server</code>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="client">
+  <div class="page-header">
+    <h1>Client application</h1>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h2>Default client</h2>
+    </div>
+    <div class="span12">
+      <p>By default, the setup will generate a client application with its redirect uri pointing to <code>http://doorkeeper-sinatra.herokuapp.com/callback</code>.</p>
+
+      <p>You'll need to change this url if you want to create your own client. Go to <code>/oauth/applications</code> and change the url to, for example, <code>http://localhost:8000</code>.</p>
+
+      <p>Don't worry about this url now, it is just for testing purposes.</p>
+
+      <p>If you don't want to create your own client, you can test this provider with this sample application hosted on heroku: <a href="http://doorkeeper-sinatra.herokuapp.com">http://doorkeeper-sinatra.herokuapp.com</a>. This is a simple Sinatra application built in order to test this provider.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h2>Using oauth2 gem</h2>
+    </div>
+    <div class="span12">
+      <p>You can test your provider using the <a href="https://github.com/intridea/oauth2">oauth2 gem</a>.</p>
+
+      <p>First of all, you need to setup a client. Go to your terminal and fire up <code>irb</code> and type:</p>
+
+      <p><pre>require 'oauth2'
+
+client_id     = '...' # your client's id generated with rake db:setup
+client_secret = '...' # your client's secret
+redirect_uri  = '...' # your client's redirect uri
+
+client = OAuth2::Client.new(
+  client_id,
+  client_secret,
+  :site => "http://localhost:3000"
+)</pre></p>
+
+      <p>Now that your client is ready, you can request an authorization code:</p>
+
+      <p><pre>client.auth_code.authorize_url(:redirect_uri => redirect_uri)
+# => http://localhost:3000/oauth/authorize?response_type=code&amp;client_id=...&amp;redirect_uri=...</pre></p>
+
+      <p>If you go to the returned url, you'll see the authorization endpoint. If you authorize, you'll be redirected to the client's redirect uri. This client does not exist so you'll see an error but don't worry, take a look at the url and grab the <code>code</code> parameter.</p>
+
+      <p>With this code you can request an <code>access token</code>:</p>
+
+      <p><pre>code = "..." # code you got in the redirect uri
+token = client.auth_code.get_token(code, :redirect_uri => redirect_uri)</pre></p>
+
+      <p>You now have access to the sample API on this provider. Try the following code to get the <code>profiles</code> resource:</p>
+
+      <p><pre>response = token.get('/api/v1/profiles.json')
+JSON.parse(response.body)</pre></p>
+
+      <p>Congratulations! You just made your first request to the doorkeeper provider!</p>
+    </div>
+  </div>
+</section>
