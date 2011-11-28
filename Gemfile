@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'jquery-rails'
 gem 'devise'
+gem 'doorkeeper', :git => "git://github.com/applicake/doorkeeper.git"
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'

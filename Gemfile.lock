@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/applicake/doorkeeper.git
+  revision: a0a9c0eaad3e276ef74ee16a7ca260660665b789
+  specs:
+    doorkeeper (0.1.0)
+      rails (~> 3.1.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -116,6 +123,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
   devise
+  doorkeeper!
   jquery-rails
   rails (= 3.1.1)
   sass-rails (~> 3.1.4)
