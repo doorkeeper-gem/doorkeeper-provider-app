@@ -11,11 +11,15 @@ body {
 }
 
 section {
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 section > .row {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.row h2 {
+  margin-bottom: 10px;
 }
 
 .quickstart {
