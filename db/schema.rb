@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111130142823) do
+ActiveRecord::Schema.define(:version => 20111208205716) do
 
   create_table "oauth_access_grants", :force => true do |t|
     t.integer  "resource_owner_id", :null => false
@@ -21,15 +21,18 @@ ActiveRecord::Schema.define(:version => 20111130142823) do
     t.string   "redirect_uri",      :null => false
     t.datetime "created_at",        :null => false
     t.datetime "revoked_at"
+    t.string   "scopes"
   end
 
   create_table "oauth_access_tokens", :force => true do |t|
     t.integer  "resource_owner_id", :null => false
     t.integer  "application_id",    :null => false
     t.string   "token",             :null => false
-    t.datetime "expires_at"
+    t.string   "refresh_token"
+    t.integer  "expires_in"
     t.datetime "revoked_at"
     t.datetime "created_at",        :null => false
+    t.string   "scopes"
   end
 
   create_table "oauth_applications", :force => true do |t|
