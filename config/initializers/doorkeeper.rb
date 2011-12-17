@@ -22,9 +22,10 @@ Doorkeeper.configure do
 
   # Access token expiration time (default 2 hours)
   # access_token_expires_in 2.hours
+  access_token_expires_in 1.hour
 
   # Issue access tokens with refresh token (disabled by default)
-  # use_refresh_token
+  use_refresh_token
 
   # Define access token scopes for your provider
   # For more information go to https://github.com/applicake/doorkeeper/wiki/Using-Scopes
