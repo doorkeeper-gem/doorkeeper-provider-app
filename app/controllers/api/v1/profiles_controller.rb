@@ -10,7 +10,7 @@ module Api::V1
     end
 
     def create
-      Profile.create!(params[:profile])
+      respond_with 'api_v1', Profile.create!(params[:profile])
     end
   end
 end
