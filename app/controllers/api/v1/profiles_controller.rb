@@ -6,7 +6,7 @@ module Api::V1
     respond_to :json
 
     def index
-      respond_with Profile.limit(5).order('updated_at desc')
+      respond_with Profile.recent
     end
 
     def create
