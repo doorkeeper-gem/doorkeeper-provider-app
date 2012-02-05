@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Api::V1::ProfilesController do
   describe 'GET #index' do
-    let(:token) { stub(:token => "some-token", :accessible? => true) }
+    let(:token) { stub(:accessible? => true) }
 
     before do
       controller.stub(:doorkeeper_token) { token }
@@ -28,14 +28,14 @@ describe Api::V1::ProfilesController do
 
   describe 'POST #create (with scopes)' do
     let(:token) do
-      stub :token => "some-token", :accessible? => true, :scopes => [:write]
+      stub :accessible? => true, :scopes => [:write]
     end
 
     before do
       controller.stub(:doorkeeper_token) { token }
     end
 
-    it 'returns the user as json' do
+    it 'creates the profile' do
       Profile.should_receive(:create!) { stub_model(Profile) }
       post :create, :format => :json
       response.status.should eq(201)
