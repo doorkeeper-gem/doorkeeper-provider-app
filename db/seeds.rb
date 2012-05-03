@@ -4,7 +4,7 @@ end
 
 User.create! :email => "user@example.com", :password => "doorkeeper", :password_confirmation => "doorkeeper"
 
-app = Application.create! :name => "Doorkeeper Sinatra Client", :redirect_uri => "http://doorkeeper-sinatra.herokuapp.com/callback"
+app = Doorkeeper::Application.create! :name => "Doorkeeper Sinatra Client", :redirect_uri => "http://doorkeeper-sinatra.herokuapp.com/callback"
 
 puts "Application: "
 puts "name: #{app.name}"
