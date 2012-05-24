@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Api::V1::CredentialsController do
   describe 'GET #me (integrated)' do
-    let!(:application) { Application.create!(:name => "MyApp", :redirect_uri => "http://app.com") }
+    let!(:application) { Doorkeeper::Application.create!(:name => "MyApp", :redirect_uri => "http://app.com") }
     let!(:user) { User.create!(:email => "ax@b.com", :password => "abc123", :password_confirmation => "abc123") }
-    let!(:token) { AccessToken.create! :application => application, :resource_owner_id => user.id }
+    let!(:token) { Doorkeeper::AccessToken.create! :application_id => application.id, :resource_owner_id => user.id }
 
     it 'responds with 200' do
       get :me, :format => :json, :access_token => token.token
