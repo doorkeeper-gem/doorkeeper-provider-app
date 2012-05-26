@@ -30,3 +30,16 @@ section > .row {
 .hero-unit {
   margin-bottom: 0;
 }
+
+.hero-unit p.large {
+  margin: 5px 0 10px 0;
+}
+
+.hero-unit .btn {
+  margin-right: 20px;
+}
+
+.hero-unit iframe,
+.hero-unit h2 span {
+  vertical-align: middle;
+}
