@@ -20,6 +20,10 @@ Doorkeeper.configure do
   #   Admin.find_by_id(session[:admin_id]) || redirect_to routes.new_admin_session_path
   # end
 
+  resource_owner_from_credentials do
+    warden.authenticate!(:scope => :user)
+  end
+
   # Access token expiration time (default 2 hours)
   # access_token_expires_in 2.hours
   access_token_expires_in 5.minutes
