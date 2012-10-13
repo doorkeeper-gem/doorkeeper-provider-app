@@ -11,7 +11,9 @@
 
 <div class="container">
   <%= render 'layouts/flash', :flash => flash %>
-  <%= yield %>
+  <div class="row">
+    <%= yield %>
+  </div>
 </div>
 
 <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js",

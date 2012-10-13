@@ -43,3 +43,7 @@ section > .row {
 .hero-unit h2 span {
   vertical-align: middle;
 }
+
+.inline_block {
+  display: inline-block;
+}

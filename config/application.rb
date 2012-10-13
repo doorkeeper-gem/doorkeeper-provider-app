@@ -47,5 +47,10 @@ module DoorkeeperProvider
 
     # Force the application to not access the DB or load models when precompiling your assets.
     config.assets.initialize_on_precompile = false
+
+    config.to_prepare do
+      # Base layout. Uses app/views/layouts/my_layout.html.erb
+      Doorkeeper::ApplicationController.layout "application"
+    end
   end
 end

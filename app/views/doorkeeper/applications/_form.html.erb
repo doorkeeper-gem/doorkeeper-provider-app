@@ -1,0 +1,30 @@
+<%= form_for(application) do |f| %>
+  <fieldset>
+    <% if @application.errors.any? %>
+      <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Whoops!</strong> Check your form for possible errors.
+      </div>
+    <% end %>
+
+    <div class="clearfix">
+      <%= f.label :name %>
+      <div class="input">
+        <%= f.text_field :name %>
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <%= f.label :redirect_uri %>
+      <div class="input">
+        <%= f.text_field :redirect_uri %>
+      </div>
+    </div class="clearfix">
+
+    <div class="actions">
+      <%= f.submit :Submit, :class => "btn btn-primary" %>
+      <%= link_to "Cancel", applications_path, :class => "btn" %>
+    </div>
+  </fieldset>
+<% end %>
+
