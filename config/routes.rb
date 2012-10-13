@@ -1,5 +1,5 @@
 DoorkeeperProvider::Application.routes.draw do
-  mount Doorkeeper::Engine => '/oauth'
+  use_doorkeeper
 
   devise_for :users
 
