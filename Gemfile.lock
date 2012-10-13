@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/applicake/doorkeeper.git
+  revision: ff19af17a44c6b9a28f82cbeeb64ac7bfdef6132
+  specs:
+    doorkeeper (0.5.0.rc1)
+      railties (~> 3.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -45,8 +52,6 @@ GEM
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
     diff-lcs (1.1.3)
-    doorkeeper (0.4.1)
-      railties (~> 3.1)
     erubis (2.7.0)
     execjs (1.2.9)
       multi_json (~> 1.0)
@@ -138,7 +143,7 @@ DEPENDENCIES
   coderay (~> 0.9.8)
   coffee-rails (~> 3.1.1)
   devise
-  doorkeeper (= 0.4.1)
+  doorkeeper (= 0.5.0.rc1)!
   faker
   jquery-rails
   pg

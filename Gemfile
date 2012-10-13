@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'jquery-rails'
 gem 'devise'
-gem 'doorkeeper', '0.4.1'
+gem 'doorkeeper', '0.5.0.rc1', github: 'applicake/doorkeeper'
 gem 'faker'
 
 gem 'coderay', '~> 0.9.8'
