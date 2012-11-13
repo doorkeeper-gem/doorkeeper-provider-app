@@ -1,4 +1,4 @@
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<%= form_for(@user, :url => user_path(@user)) do |f| %>
   <div class="clearfix">
     <%= f.label :email %>
     <div class="input">
@@ -13,7 +13,14 @@
     </div>
   </div>
 
+  <div class="clearfix">
+    <%= f.label :password_confirmation %>
+    <div class="input">
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+
   <div class="actions">
-    <%= f.submit "Sign in", :class => "btn btn-primary" %><small> or <%=link_to "Sign Up", users_sign_up_path %></small>
+    <%= f.submit "Sign up and log in", :class => "btn btn-primary" %>
   </div>
 <% end %>
