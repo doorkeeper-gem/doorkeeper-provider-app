@@ -7,5 +7,6 @@ module Api::V1
     def me
       respond_with current_resource_owner
     end
+
   end
 end
