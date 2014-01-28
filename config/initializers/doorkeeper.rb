@@ -6,7 +6,8 @@ Doorkeeper.configure do
     # If you want to use named routes from your app you need
     # to call them on routes object eg.
     # routes.new_user_session_path
-    current_user || warden.authenticate!(:scope => :user)
+    # current_user || warden.authenticate!(:scope => :user)
+    request.env["warden"].user || User.where(:email => request.params[:username]).first
   end
 
   # If you want to restrict the access to the web interface for
@@ -21,7 +22,9 @@ Doorkeeper.configure do
   # end
 
   resource_owner_from_credentials do
-    warden.authenticate!(:scope => :user)
+    request.params[:user] = {:email => request.params[:username], :password => request.params[:password]}
+    request.env["devise.allow_params_authentication"] = true
+    request.env["warden"].authenticate!(:scope => :user)
   end
 
   # Access token expiration time (default 2 hours)
