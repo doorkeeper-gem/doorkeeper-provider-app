@@ -6,7 +6,8 @@ Doorkeeper.configure do
     # If you want to use named routes from your app you need
     # to call them on routes object eg.
     # routes.new_user_session_path
-    current_user || warden.authenticate!(:scope => :user)
+    # current_user || warden.authenticate!(:scope => :user)
+    request.env["warden"].user || User.where(:email => request.params[:username]).first
   end
 
   # If you want to restrict the access to the web interface for
@@ -20,13 +21,18 @@ Doorkeeper.configure do
   #   Admin.find_by_id(session[:admin_id]) || redirect_to routes.new_admin_session_path
   # end
 
+  # called for Resource Owner Password Credentials Grant
   resource_owner_from_credentials do
-    warden.authenticate!(:scope => :user)
+    request.params[:user] = {:email => request.params[:username], :password => request.params[:password]}
+    request.env["devise.allow_params_authentication"] = true
+    user = request.env["warden"].authenticate!(:scope => :user)
+    env['warden'].logout
+    user
   end
 
   # Access token expiration time (default 2 hours)
   # access_token_expires_in 2.hours
-  access_token_expires_in 5.minutes
+  access_token_expires_in 30.seconds
 
   # Issue access tokens with refresh token (disabled by default)
   use_refresh_token

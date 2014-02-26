@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.10'
+gem 'rails', '~> 3.1'
 gem 'jquery-rails'
 gem 'devise'
-gem 'doorkeeper', '0.5.0.rc1'
+gem 'doorkeeper', :git => 'https://github.com/applicake/doorkeeper.git'
 gem 'faker'
 
 gem 'coderay', '~> 0.9.8'
@@ -19,5 +19,6 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'debugger'
   gem 'rspec-rails', '~> 2.8.1'
 end
