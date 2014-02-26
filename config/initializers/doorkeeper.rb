@@ -25,7 +25,9 @@ Doorkeeper.configure do
   resource_owner_from_credentials do
     request.params[:user] = {:email => request.params[:username], :password => request.params[:password]}
     request.env["devise.allow_params_authentication"] = true
-    request.env["warden"].authenticate!(:scope => :user)
+    user = request.env["warden"].authenticate!(:scope => :user)
+    env['warden'].logout
+    user
   end
 
   # Access token expiration time (default 2 hours)
