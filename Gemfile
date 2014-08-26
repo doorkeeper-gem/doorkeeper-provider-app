@@ -1,23 +1,25 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.10'
+gem 'rails', '~> 5.1.0'
 gem 'jquery-rails'
 gem 'devise'
-gem 'doorkeeper', '0.5.0.rc1'
+gem 'doorkeeper', '~> 4.0'
 gem 'faker'
 
-gem 'coderay', '~> 0.9.8'
-gem 'redcarpet', '2.0.0b5'
+gem 'coderay'
+gem 'redcarpet'
 
 gem 'pg', :group => :production
 
-group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+
+group :development do
+  gem 'listen'
 end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 2.8.1'
+  gem 'rspec-rails'
 end

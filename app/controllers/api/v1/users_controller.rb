@@ -1,9 +1,9 @@
 module Api::V1
   class UsersController < ApiController
-    doorkeeper_for :index
-    doorkeeper_for :create, :scopes => [:write]
-
-    respond_to :json
+    before_action -> { doorkeeper_authorize! :public }, :only => :index
+    before_action only: [:create, :update, :destroy] do
+      doorkeeper_authorize! :write
+    end
 
     def index
       respond_with User.recent

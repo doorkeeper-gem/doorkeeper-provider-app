@@ -1,11 +1,9 @@
 module Api::V1
   class CredentialsController < ApiController
-    doorkeeper_for :all
-
-    respond_to :json
+    before_action :doorkeeper_authorize!
 
     def me
-      respond_with current_resource_owner
+      render json: current_resource_owner
     end
 
   end

@@ -1,6 +1,9 @@
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
+  # secret
+  config.secret_key = '831d4f6bf936e609026442fa201283d05d62b71181113c6a09ccb130e6d0f826e45a9bd8b01dd42d7cee7ded387c7cc9daee0fdec5126176b342c3d90f485e4a'
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
@@ -91,10 +94,6 @@ Devise.setup do |config|
 
   # If true, extends the user's remember period when remembered via cookie.
   # config.extend_remember_period = false
-
-  # If true, uses the password salt as remember token. This should be turned
-  # to false if you are not using database authenticatable.
-  config.use_salt_as_remember_token = true
 
   # Options to be passed to the created cookie. For instance, you can set
   # :secure => true in order to force SSL only cookies.
