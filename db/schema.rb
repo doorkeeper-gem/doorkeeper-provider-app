@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526121506) do
+ActiveRecord::Schema.define(:version => 20140826123146) do
 
   create_table "oauth_access_grants", :force => true do |t|
-    t.integer  "resource_owner_id", :null => false
-    t.integer  "application_id",    :null => false
-    t.string   "token",             :null => false
-    t.integer  "expires_in",        :null => false
-    t.string   "redirect_uri",      :null => false
-    t.datetime "created_at",        :null => false
+    t.integer  "resource_owner_id",                :null => false
+    t.integer  "application_id",                   :null => false
+    t.string   "token",                            :null => false
+    t.integer  "expires_in",                       :null => false
+    t.text     "redirect_uri",      :limit => 255, :null => false
+    t.datetime "created_at",                       :null => false
     t.datetime "revoked_at"
     t.string   "scopes"
   end
@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(:version => 20120526121506) do
   add_index "oauth_access_tokens", ["token"], :name => "index_oauth_access_tokens_on_token", :unique => true
 
   create_table "oauth_applications", :force => true do |t|
-    t.string   "name",         :null => false
-    t.string   "uid",          :null => false
-    t.string   "secret",       :null => false
-    t.string   "redirect_uri", :null => false
+    t.string   "name",                        :null => false
+    t.string   "uid",                         :null => false
+    t.string   "secret",                      :null => false
+    t.text     "redirect_uri", :limit => 255, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
