@@ -18,7 +18,7 @@ describe Api::V1::CredentialsController do
   end
 
   describe 'GET #me (stubbed)' do
-    let(:token) { stub(:token => "some-token", :accessible? => true) }
+    let(:token) { stub(:token => "some-token", :accessible? => true, :acceptable? => true, :revoked? => false, :expired? => false) }
     let(:user)  { stub(:to_json => "{}") }
 
     before do
@@ -33,6 +33,7 @@ describe Api::V1::CredentialsController do
 
     it 'responds with 401 when unauthorized' do
       token.stub :accessible? => false
+      token.stub :acceptable? => false
       get :me, :format => :json
       response.status.should eq(401)
     end
