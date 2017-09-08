@@ -36,8 +36,11 @@ RSpec.describe Api::V1::ProfilesController do
     end
 
     it 'creates the profile' do
-      expect(Profile).to receive(:create!) { instance_double(Profile) }
-      post :create, :format => :json
+      expect {
+        post :create, :format => :json
+      }.to change {
+        Profile.all.count
+      }.by(1)
       expect(response.status).to eq(201)
     end
   end
