@@ -1,46 +1,44 @@
-require 'spec_helper'
-
-describe Api::V1::ProfilesController do
+RSpec.describe Api::V1::ProfilesController do
   describe 'GET #index' do
-    let(:token) { stub(:accessible? => true, :acceptable? => true, :revoked? => false, :expired? => false) }
+    let(:token) { double(:accessible? => true, :acceptable? => true, :revoked? => false, :expired? => false) }
 
     before do
-      controller.stub(:doorkeeper_token) { token }
+      allow(controller).to receive(:doorkeeper_token) { token }
     end
 
     it 'responds with 200' do
       get :index, :format => :json
-      response.status.should eq(200)
+      expect(response.status).to eq(200)
     end
 
     it 'returns recent profiles as json' do
-      Profile.should_receive(:recent) { [] }
+      expect(Profile).to receive(:recent) { [] }
       get :index, :format => :json
-      response.body.should == [].to_json
+      expect(response.body).to eq([].to_json)
     end
 
     it 'responds with 401 when unauthorized' do
-      token.stub :accessible? => false
-      token.stub :acceptable? => false
+      allow(token).to receive_messages :accessible? => false
+      allow(token).to receive_messages :acceptable? => false
       get :index, :format => :json
-      response.status.should eq(401)
+      expect(response.status).to eq(401)
     end
   end
 
   describe 'POST #create (with scopes)' do
     let(:token) do
-      stub :accessible? => true, :scopes => [:write],
+      double :accessible? => true, :scopes => [:write],
          :acceptable? => true, :expired? => false, :revoked? => false
     end
 
     before do
-      controller.stub(:doorkeeper_token) { token }
+      allow(controller).to receive(:doorkeeper_token) { token }
     end
 
     it 'creates the profile' do
-      Profile.should_receive(:create!) { stub_model(Profile) }
+      expect(Profile).to receive(:create!) { instance_double(Profile) }
       post :create, :format => :json
-      response.status.should eq(201)
+      expect(response.status).to eq(201)
     end
   end
 end
