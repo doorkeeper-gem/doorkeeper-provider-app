@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.10'
+gem 'rails', '~> 3.1.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'doorkeeper', '1.4.0'
