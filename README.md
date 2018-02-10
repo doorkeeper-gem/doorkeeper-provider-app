@@ -66,7 +66,7 @@ end
 
 We namespace the API controllers to avoid name clashing and collisions between your existing application and the API. This way, you can make changes to your application without messing up with the API's behavior.
 
-You can find all controllers under `/app/api/v1` folder.
+You can find all controllers under `/app/controllers/api/v1` folder.
 
 The `api_controller.rb` works as a parent class to the other controllers. It only defines a method that returns the current resource owner, based on the access token:
 
