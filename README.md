@@ -1,18 +1,18 @@
 # Doorkeeper Provider App
 
-[![Build Status](https://secure.travis-ci.org/applicake/doorkeeper-provider-app.png)](http://travis-ci.org/applicake/doorkeeper-provider-app)
+[![Build Status](https://secure.travis-ci.org/doorkeeper-gem/doorkeeper-provider-app.png)](http://travis-ci.org/doorkeeper-gem/doorkeeper-provider-app)
 
-This app is an example of an OAuth 2 provider using [doorkeeper gem](https://github.com/applicake/doorkeeper), [Rails 5.1](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise). Check out the [app hosted on heroku](http://doorkeeper-provider.herokuapp.com/) for a live demo.
+This app is an example of an OAuth 2 provider using [doorkeeper gem](https://github.com/doorkeeper-gem/doorkeeper), [Rails 5.1](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise). Check out the [app hosted on heroku](http://doorkeeper-provider.herokuapp.com/) for a live demo.
 
 ## About Doorkeeper Gem
 
-For more information [about the gem](https://github.com/applicake/doorkeeper), [documentation](https://github.com/applicake/doorkeeper#readme), [wiki](https://github.com/applicake/doorkeeper/wiki/_pages) and another resources, check out the project [on GitHub](https://github.com/applicake/doorkeeper)
+For more information [about the gem](https://github.com/doorkeeper-gem/doorkeeper), [documentation](https://github.com/doorkeeper-gem/doorkeeper#readme), [wiki](https://github.com/doorkeeper-gem/doorkeeper/wiki/_pages) and another resources, check out the project [on GitHub](https://github.com/doorkeeper-gem/doorkeeper)
 
 ## Installation
 
-First clone the [repository from GitHub](https://github.com/applicake/doorkeeper-provider-app):
+First clone the [repository from GitHub](https://github.com/doorkeeper-gem/doorkeeper-provider-app):
 
-    git clone git://github.com/applicake/doorkeeper-provider-app.git
+    git clone git://github.com/doorkeeper-gem/doorkeeper-provider-app.git
 
 Install all dependencies with:
 
@@ -66,7 +66,7 @@ end
 
 We namespace the API controllers to avoid name clashing and collisions between your existing application and the API. This way, you can make changes to your application without messing up with the API's behavior.
 
-You can find all controllers under `/app/api/v1` folder.
+You can find all controllers under `/app/controllers/api/v1` folder.
 
 The `api_controller.rb` works as a parent class to the other controllers. It only defines a method that returns the current resource owner, based on the access token:
 

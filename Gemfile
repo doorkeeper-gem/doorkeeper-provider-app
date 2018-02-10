@@ -20,6 +20,8 @@ group :development do
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'sqlite3', platform: [:ruby, :mswin, :mingw, :x64_mingw]
   gem 'rspec-rails'
 end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
