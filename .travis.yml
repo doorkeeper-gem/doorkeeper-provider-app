@@ -1,7 +1,12 @@
 language: ruby
+cache: bundler
+sudo: false
+
 rvm:
   - 2.4.1
 env:
-  - DB=sqlite
+  global:
+    - RAILS_ENV=test
+    - DB=sqlite
 script:
-  - RAILS_ENV=test bundle exec rake --trace db:setup spec
+  - bundle exec rake db:setup spec
