@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/applicake/doorkeeper-provider-app.png)](http://travis-ci.org/applicake/doorkeeper-provider-app)
 
-This app is an example of an OAuth 2 provider using [doorkeeper gem](https://github.com/applicake/doorkeeper), [Rails 3.1](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise). Check out the [app hosted on heroku](http://doorkeeper-provider.herokuapp.com/) for a live demo.
+This app is an example of an OAuth 2 provider using [doorkeeper gem](https://github.com/applicake/doorkeeper), [Rails 5.1](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise). Check out the [app hosted on heroku](http://doorkeeper-provider.herokuapp.com/) for a live demo.
 
 ## About Doorkeeper Gem
 
@@ -85,15 +85,15 @@ To make your API only available for OAuth users, you need to tell doorkeeper to 
 ``` ruby
 module Api::V1
   class ProfilesController < ApiController
-    doorkeeper_for :all # require access token in all actions
-    respond_to     :json
+    before_action :doorkeeper_authorize!
 
     def index
-      respond_with Profile.all
+      render json: Profile.recent
     end
-  end
 end
 ```
+
+However, see also the Doorkeeper wiki article about [using scopes](https://github.com/doorkeeper-gem/doorkeeper/wiki/Using-Scopes).
 
 If you attempt to access any of the protected resources without an proper access token, you'll get an `401 Unauthorized` response.
 

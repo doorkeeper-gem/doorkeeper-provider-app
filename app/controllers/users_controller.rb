@@ -9,8 +9,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(params[:user])
+    @user = User.create!(user_params)
     sign_in_and_redirect @user
   end
 
+  ###
+  private
+  ###
+
+  def user_params
+    user_params = params[:user]
+    user_params ? user_params.permit(
+        :email, :password, :password_confirmation, :remember_me)
+      : {}
+  end
 end
