@@ -3,6 +3,5 @@ db/*.sqlite3
 log/*.log
 tmp/
 .sass-cache/
-bin/
 spec/examples.txt
 .idea/
