@@ -1,7 +1,7 @@
 class Api::V1::FastController < ActionController::Metal
   include AbstractController::Callbacks
   include ActionController::Head
-  include Doorkeeper::Helpers::Filter
+  include Doorkeeper::Rails::Helpers
 
   before_action :doorkeeper_authorize!
 
