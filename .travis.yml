@@ -3,7 +3,7 @@ cache: bundler
 sudo: false
 
 rvm:
-  - 2.4.1
+  - 2.4.3
 env:
   global:
     - RAILS_ENV=test
