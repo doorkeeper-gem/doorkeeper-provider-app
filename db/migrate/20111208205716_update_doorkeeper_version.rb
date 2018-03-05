@@ -1,4 +1,4 @@
-class UpdateDoorkeeperVersion < ActiveRecord::Migration
+class UpdateDoorkeeperVersion < ActiveRecord::Migration[5.1]
   def up
     add_column :oauth_access_grants, :scopes, :string
 

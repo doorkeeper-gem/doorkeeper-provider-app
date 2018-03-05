@@ -1,4 +1,4 @@
-class UpgradeDoorkeeperTables < ActiveRecord::Migration
+class UpgradeDoorkeeperTables < ActiveRecord::Migration[5.1]
   def up
     change_column :oauth_applications, :redirect_uri, :text, null: false
     change_column :oauth_access_grants, :redirect_uri, :text, null: false

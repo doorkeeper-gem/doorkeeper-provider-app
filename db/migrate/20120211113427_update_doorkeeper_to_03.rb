@@ -1,4 +1,4 @@
-class UpdateDoorkeeperTo03 < ActiveRecord::Migration
+class UpdateDoorkeeperTo03 < ActiveRecord::Migration[5.1]
   def up
     add_index :oauth_applications, :uid, :unique => true
     add_index :oauth_access_grants, :token, :unique => true

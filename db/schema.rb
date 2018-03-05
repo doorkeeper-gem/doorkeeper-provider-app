@@ -15,23 +15,23 @@ ActiveRecord::Schema.define(version: 20170909154855) do
   create_table "oauth_access_grants", force: :cascade do |t|
     t.integer "resource_owner_id", null: false
     t.integer "application_id", null: false
-    t.string "token", limit: 255, null: false
+    t.string "token", null: false
     t.integer "expires_in", null: false
-    t.text "redirect_uri", limit: 255, null: false
+    t.text "redirect_uri", null: false
     t.datetime "created_at", null: false
     t.datetime "revoked_at"
-    t.string "scopes", limit: 255
+    t.string "scopes"
     t.index ["token"], name: "index_oauth_access_grants_on_token", unique: true
   end
 
   create_table "oauth_access_tokens", force: :cascade do |t|
     t.integer "resource_owner_id"
     t.integer "application_id", null: false
-    t.string "token", limit: 255, null: false
+    t.string "token", null: false
     t.datetime "revoked_at"
     t.datetime "created_at", null: false
-    t.string "refresh_token", limit: 255
-    t.string "scopes", limit: 255
+    t.string "refresh_token"
+    t.string "scopes"
     t.integer "expires_in"
     t.string "previous_refresh_token", default: "", null: false
     t.index ["refresh_token"], name: "index_oauth_access_tokens_on_refresh_token", unique: true
@@ -40,35 +40,35 @@ ActiveRecord::Schema.define(version: 20170909154855) do
   end
 
   create_table "oauth_applications", force: :cascade do |t|
-    t.string "name", limit: 255, null: false
-    t.string "uid", limit: 255, null: false
-    t.string "secret", limit: 255, null: false
-    t.text "redirect_uri", limit: 255, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string "scopes", limit: 255, default: "", null: false
+    t.string "name", null: false
+    t.string "uid", null: false
+    t.string "secret", null: false
+    t.text "redirect_uri", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "scopes", default: "", null: false
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "name", limit: 255
-    t.string "email", limit: 255
-    t.string "username", limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
+    t.string "email"
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", limit: 255, default: "", null: false
-    t.string "encrypted_password", limit: 255, default: "", null: false
-    t.string "reset_password_token", limit: 255
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip", limit: 255
-    t.string "last_sign_in_ip", limit: 255
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
