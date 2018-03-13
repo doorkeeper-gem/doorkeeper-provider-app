@@ -1,4 +1,4 @@
-<%= form_for( [:oauth, application] ) do |f| %>
+<%= form_for @application, url: doorkeeper_submit_path(@application) do |f| %>
   <fieldset>
     <% if @application.errors.any? %>
       <div class="alert alert-error">
