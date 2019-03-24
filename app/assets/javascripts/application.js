@@ -1,3 +1,2 @@
-$(function() {
-  $('body').scrollspy({ offset: 40 });
-})
+//= require jquery
+//= require jquery_ujs

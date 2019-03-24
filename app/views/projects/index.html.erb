@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col">
+    <h2>Projects</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Url</th>
+          <th scope="col" colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @projects.each do |project| %>
+          <tr>
+            <th class="align-middle" scope="row"><%= project.id %></th>
+            <td class="align-middle"><%= project.name %></td>
+            <td class="align-middle"><%= project.url %></td>
+            <td class="align-middle" style="width: 70px"><%= link_to 'Show', project, class: 'btn btn-sm btn-outline-primary' %></td>
+            <td class="align-middle" style="width: 70px"><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-sm btn-outline-secondary' %></td>
+            <td class="align-middle" style="width: 70px"><%= link_to 'Destroy', project, class: 'btn btn-sm btn-outline-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Project', new_project_path %>
+  </div>
+</div>

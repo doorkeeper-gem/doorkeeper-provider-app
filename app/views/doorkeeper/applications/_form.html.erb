@@ -1,47 +1,52 @@
-<%= form_for application, url: doorkeeper_submit_path(application), html: {class: 'form-horizontal', role: 'form'} do |f| %>
+<%= form_for application, url: doorkeeper_submit_path(application), html: { class: 'form-horizontal', role: 'form'} do |f| %>
   <% if application.errors.any? %>
-    <div class="alert alert-danger" data-alert><p><%= t('doorkeeper.applications.form.error') %></p></div>
-  <% end %>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <h5>
+        <%= t('doorkeeper.applications.form.error') %>
+      </h5>
 
-  <%= content_tag :div, class: "form-group#{' has-error' if application.errors[:name].present?}" do %>
-    <%= f.label :name, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_field :name, class: 'form-control' %>
-      <%= doorkeeper_errors_for application, :name %>
-    </div>
-  <% end %>
+      <ul style="margin: 0">
+        <% application.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
 
-  <%= content_tag :div, class: "form-group#{' has-error' if application.errors[:redirect_uri].present?}" do %>
-    <%= f.label :redirect_uri, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_area :redirect_uri, class: 'form-control' %>
-      <%= doorkeeper_errors_for application, :redirect_uri %>
-      <span class="help-block">
-        <%= t('doorkeeper.applications.help.redirect_uri') %>
-      </span>
-      <% if Doorkeeper.configuration.native_redirect_uri %>
-          <span class="help-block">
-            <%= raw t('doorkeeper.applications.help.native_redirect_uri', native_redirect_uri: content_tag(:code) { Doorkeeper.configuration.native_redirect_uri }) %>
-          </span>
-      <% end %>
-    </div>
-  <% end %>
-
-  <%= content_tag :div, class: "form-group#{' has-error' if application.errors[:scopes].present?}" do %>
-    <%= f.label :scopes, class: 'col-sm-2 control-label' %>
-    <div class="col-sm-10">
-      <%= f.text_field :scopes, class: 'form-control' %>
-      <%= doorkeeper_errors_for application, :scopes %>
-      <span class="help-block">
-        <%= t('doorkeeper.applications.help.scopes') %>
-      </span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
   <% end %>
 
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit t('doorkeeper.applications.buttons.submit'), class: "btn btn-primary" %>
-      <%= link_to t('doorkeeper.applications.buttons.cancel'), oauth_applications_path, class: "btn btn-default" %>
-    </div>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :redirect_uri %>
+    <%= f.text_area :redirect_uri, class: 'form-control' %>
+
+    <small class="form-text text-muted">
+      <%= t('doorkeeper.applications.help.redirect_uri') %>
+    </small>
+    <% if Doorkeeper.configuration.native_redirect_uri %>
+      <small class="form-text text-muted">
+        <%= raw t('doorkeeper.applications.help.native_redirect_uri', native_redirect_uri: content_tag(:code) { Doorkeeper.configuration.native_redirect_uri }) %>
+      </small>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :scopes %>
+    <%= f.text_field :scopes, class: 'form-control' %>
+    <%= doorkeeper_errors_for application, :scopes %>
+    <small class="form-text text-muted">
+      <%= t('doorkeeper.applications.help.scopes') %>
+    </small>
+  </div>
+
+  <p>
+    <%= f.submit t('doorkeeper.applications.buttons.submit'), class: "btn btn-primary" %>
+    <%= link_to t('doorkeeper.applications.buttons.cancel'), oauth_applications_path, class: "btn btn-default" %>
+  </p>
 <% end %>

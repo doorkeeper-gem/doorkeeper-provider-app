@@ -1,18 +1,21 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   use_doorkeeper
-  devise_for :users
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+  # Project administration via UI
+  resources :projects
 
   namespace :api do
     namespace :v1 do
-      resources :profiles
-      resources :users
-      get '/me' => "credentials#me"
-      get '/fast' => 'fast#index'
+      resources :projects
+      get '/me' => 'credentials#me'
     end
   end
 
-  get "/users/sign_up" => "users#new"
-  post "/user" => "users#create"
-
-  root :to => "home#index"
+  root to: 'home#index'
 end

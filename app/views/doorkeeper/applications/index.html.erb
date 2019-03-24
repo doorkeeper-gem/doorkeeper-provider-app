@@ -1,26 +1,28 @@
-<div class="page-header">
-  <h1><%= t('.title') %></h1>
+<div class="row">
+  <div class="col">
+    <h1><%= t('.title') %></h1>
+
+    <p><%= link_to t('.new'), new_oauth_application_path, class: 'btn btn-success' %></p>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t('.name') %></th>
+          <th><%= t('.callback_url') %></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @applications.each do |application| %>
+          <tr id="application_<%= application.id %>">
+            <td class="align-middle"><%= link_to application.name, oauth_application_path(application) %></td>
+            <td class="align-middle"><%= application.redirect_uri %></td>
+            <td class="align-middle" style="width: 70px"><%= link_to t('doorkeeper.applications.buttons.edit'), edit_oauth_application_path(application), class: 'btn btn-sm btn-outline-secondary' %></td>
+            <td class="align-middle" style="width: 70px"><%= render 'delete_form', application: application %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<p><%= link_to t('.new'), new_oauth_application_path, class: 'btn btn-success' %></p>
-
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th><%= t('.name') %></th>
-    <th><%= t('.callback_url') %></th>
-    <th></th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @applications.each do |application| %>
-    <tr id="application_<%= application.id %>">
-      <td><%= link_to application.name, oauth_application_path(application) %></td>
-      <td><%= application.redirect_uri %></td>
-      <td><%= link_to t('doorkeeper.applications.buttons.edit'), edit_oauth_application_path(application), class: 'btn btn-link' %></td>
-      <td><%= render 'delete_form', application: application %></td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>

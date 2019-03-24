@@ -1,9 +1,11 @@
 <div class="row">
   <% flash.each do |key, message| %>
-    <div class="span12">
-      <div class="alert alert-<%= key %>">
-        <button type="button" class="close" data-dismiss="alert">×</button>
+    <div class="col">
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
         <%= message %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     </div>
   <% end %>

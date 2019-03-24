@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col">
+    <h2>Project #<%= @project.id %></h2>
+    <p>
+      <strong>Name:</strong>
+      <%= @project.name %>
+    </p>
+
+    <p>
+      <strong>Url:</strong>
+      <%= @project.url %>
+    </p>
+
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+    <%= link_to 'Back', projects_path %>
+  </div>
+</div>

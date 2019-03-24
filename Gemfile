@@ -3,15 +3,17 @@ source 'http://rubygems.org'
 ruby '2.4.3'
 
 gem 'rails', '~> 5.1.0'
+gem 'doorkeeper', '~> 5.0'
+gem 'devise', '~> 4.6'
+
 gem 'jquery-rails'
-gem 'devise'
-gem 'doorkeeper', '~> 4.0'
 gem 'faker'
 
 gem 'coderay'
 gem 'redcarpet'
 
-gem 'pg', :group => :production
+gem 'pg',      group: :production
+gem 'sqlite3', group: [:development, :test], platform: [:ruby, :mswin, :mingw, :x64_mingw]
 
 gem 'sass-rails'
 gem 'coffee-rails'
@@ -21,8 +23,7 @@ group :development do
   gem 'listen'
 end
 
-group :development, :test do
-  gem 'sqlite3', platform: [:ruby, :mswin, :mingw, :x64_mingw]
+group :test do
   gem 'rspec-rails'
 end
 

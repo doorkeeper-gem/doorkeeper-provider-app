@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col">
+    <h2>Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email", placeholder: 'user@example.com' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control', autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="form-group">
+          <div class="form-check">
+            <%= f.check_box :remember_me, class: 'form-check-input' %>
+            <%= f.label :remember_me, class: 'form-check-label' %>
+          </div>
+        </div>
+      <% end %>
+
+      <p><%= f.submit 'Log in', class: 'btn btn-primary' %></p>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+
+  <div class="col">
+    <h4>Sign in as test user</h4>
+    <p>
+      A default user is already created for this example application. Use <code>user@example.com</code> and <code>doorkeeper</code> as login and password.
+    </p>
+  </div>
+</div>

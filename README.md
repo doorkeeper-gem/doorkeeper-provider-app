@@ -90,6 +90,7 @@ module Api::V1
     def index
       render json: Profile.recent
     end
+  end
 end
 ```
 
