@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  use_doorkeeper
+  use_doorkeeper do
+    controllers applications: 'oauth_applications'
+  end
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
