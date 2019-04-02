@@ -17,6 +17,7 @@ gem "pg",      group: :production
 gem "sqlite3", group: [:development, :test], platform: [:ruby, :mswin, :mingw, :x64_mingw]
 
 gem "puma"
+gem "rack-timeout"
 
 gem "sass-rails"
 gem "coffee-rails"
