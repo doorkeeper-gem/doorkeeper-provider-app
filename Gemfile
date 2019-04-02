@@ -10,6 +10,7 @@ gem "devise", "~> 4.6"
 gem "bootsnap", require: false
 
 gem "faker"
+gem "jquery-rails"
 
 gem "coderay"
 gem "redcarpet"
