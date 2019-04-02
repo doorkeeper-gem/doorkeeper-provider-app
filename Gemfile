@@ -1,30 +1,33 @@
-source 'http://rubygems.org'
+# frozen_string_literal: true
 
-ruby '2.4.3'
+source "http://rubygems.org"
 
-gem 'rails', '~> 5.1.0'
-gem 'doorkeeper', '~> 5.0'
-gem 'devise', '~> 4.6'
+ruby "2.6.2"
 
-gem 'jquery-rails'
-gem 'faker'
+gem "rails", "~> 5.1.0"
+gem "doorkeeper", "~> 5.0"
+gem "devise", "~> 4.6"
 
-gem 'coderay'
-gem 'redcarpet'
+gem "jquery-rails"
+gem "faker"
 
-gem 'pg',      group: :production
-gem 'sqlite3', group: [:development, :test], platform: [:ruby, :mswin, :mingw, :x64_mingw]
+gem "coderay"
+gem "redcarpet"
 
-gem 'sass-rails'
-gem 'coffee-rails'
-gem 'uglifier'
+gem "pg",      group: :production
+gem "sqlite3", group: [:development, :test], platform: [:ruby, :mswin, :mingw, :x64_mingw]
+
+gem "sass-rails"
+gem "coffee-rails"
+gem "uglifier"
 
 group :development do
-  gem 'listen'
+  gem "listen"
+  gem "rubocop-rails_config"
 end
 
 group :test do
-  gem 'rspec-rails'
+  gem "rspec-rails"
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw]

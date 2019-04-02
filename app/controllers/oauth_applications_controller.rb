@@ -47,11 +47,11 @@ class OauthApplicationsController < ApplicationController
 
   private
 
-  def set_application
-    @application = current_user.oauth_applications.find(params[:id])
-  end
+    def set_application
+      @application = current_user.oauth_applications.find(params[:id])
+    end
 
-  def application_params
-    params.require(:doorkeeper_application).permit(:name, :redirect_uri, :scopes, :confidential)
-  end
+    def application_params
+      params.require(:doorkeeper_application).permit(:name, :redirect_uri, :scopes, :confidential)
+    end
 end

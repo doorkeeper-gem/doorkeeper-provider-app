@@ -39,8 +39,8 @@ module Api::V1
 
     private
 
-    def project_params
-      params.require(:project).permit(:name, :url)
-    end
+      def project_params
+        params.require(:project).permit(:name, :url)
+      end
   end
 end
