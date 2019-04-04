@@ -27,11 +27,10 @@ gem "uglifier"
 
 group :development do
   gem "listen"
+  gem "rubocop-performance"
   gem "rubocop-rails_config"
 end
 
 group :test do
   gem "rspec-rails"
 end
-
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw]
