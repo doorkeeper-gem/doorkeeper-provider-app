@@ -14,6 +14,7 @@ gem "jquery-rails"
 gem "coderay"
 gem "redcarpet"
 
+gem "uglifier"
 gem "pg", "~> 1.1", group: :production
 gem "sqlite3",      group: [:development, :test]
 
