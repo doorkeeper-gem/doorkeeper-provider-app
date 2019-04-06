@@ -64,7 +64,7 @@ Doorkeeper.configure do
 
   # The controller Doorkeeper::ApplicationController inherits from.
   # Defaults to ActionController::Base.
-  # See https://github.com/doorkeeper-gem/doorkeeper#custom-base-controller
+  # See https://doorkeeper.gitbook.io/guides/configuration/other-configurations#custom-base-controller
   #
   # base_controller 'ApplicationController'
 
@@ -75,7 +75,62 @@ Doorkeeper.configure do
   # doesn't updates existing token expiration time, it will create a new token instead.
   # Rationale: https://github.com/doorkeeper-gem/doorkeeper/issues/383
   #
+  # You can not enable this option together with +hash_token_secrets+.
+  #
   # reuse_access_token
+
+  # Set a limit for token_reuse if using reuse_access_token option
+  #
+  # This option limits token_reusability to some extent.
+  # If not set then access_token will be reused unless it expires.
+  # Rationale: https://github.com/doorkeeper-gem/doorkeeper/issues/1189
+  #
+  # This option should be a percentage(i.e. (0,100])
+  #
+  # token_reuse_limit 100
+
+  # Hash access and refresh tokens before persisting them.
+  # This will disable the possibility to use +reuse_access_token+
+  # since plain values can no longer be retrieved.
+  #
+  # Note: If you are already a user of doorkeeper and have existing tokens
+  # in your installation, they will be invalid without enabling the additional
+  # setting `fallback_to_plain_secrets` below.
+  #
+  # hash_token_secrets
+  # By default, token secrets will be hashed using the
+  # +Doorkeeper::Hashing::SHA256+ strategy.
+  #
+  # If you wish to use another hashing implementation, you can override
+  # this strategy as follows:
+  #
+  # hash_token_secrets using: '::Doorkeeper::Hashing::MyCustomHashImpl'
+  #
+  # Keep in mind that changing the hashing function will invalidate all existing
+  # secrets, if there are any.
+
+  # Hash application secrets before persisting them.
+  #
+  # hash_application_secrets
+  #
+  # By default, applications will be hashed
+  # with the +Doorkeeper::SecretStoring::SHA256+ strategy.
+  #
+  # If you wish to use bcrypt for application secret hashing, uncomment
+  # this line instead:
+  #
+  # hash_application_secrets using: '::Doorkeeper::SecretStoring::BCrypt'
+
+  # When the above option is enabled,
+  # and a hashed token or secret is not found,
+  # you can allow to fall back to another strategy.
+  # For users upgrading doorkeeper and wishing to enable hashing,
+  # you will probably want to enable the fallback to plain tokens.
+  #
+  # This will ensure that old access tokens and secrets
+  # will remain valid even if the hashing above is enabled.
+  #
+  # fallback_to_plain_secrets
 
   # Issue access tokens with refresh token (disabled by default), you may also
   # pass a block which accepts `context` to customize when to give a refresh
@@ -87,12 +142,6 @@ Doorkeeper.configure do
   # `scopes` - the requested scopes (see Doorkeeper::OAuth::Scopes)
   #
   use_refresh_token
-
-  # Forbids creating/updating applications with arbitrary scopes that are
-  # not in configuration, i.e. `default_scopes` or `optional_scopes`.
-  # (disabled by default)
-  #
-  enforce_configured_scopes
 
   # Provide support for an owner to be assigned to each registered application (disabled by default)
   # Optional parameter confirmation: true (default false) if you want to enforce ownership of
@@ -107,6 +156,21 @@ Doorkeeper.configure do
   #
   default_scopes :read
   optional_scopes :write
+
+  # Define scopes_by_grant_type to restrict only certain scopes for grant_type
+  # By default, all the scopes will be available for all the grant types.
+  #
+  # Keys to this hash should be the name of grant_type and
+  # values should be the array of scopes for that grant type.
+  # Note: scopes should be from configured_scopes(i.e. deafult or optional)
+  #
+  # scopes_by_grant_type password: [:write], client_credentials: [:update]
+
+  # Forbids creating/updating applications with arbitrary scopes that are
+  # not in configuration, i.e. `default_scopes` or `optional_scopes`.
+  # (disabled by default)
+  #
+  enforce_configured_scopes
 
   # Change the way client credentials are retrieved from the request object.
   # By default it retrieves first from the `HTTP_AUTHORIZATION` header, then
@@ -165,6 +229,24 @@ Doorkeeper.configure do
   #
   # handle_auth_errors :raise
 
+  # Customize token introspection response.
+  # Allows to add your own fields to default one that are required by the OAuth spec
+  # for the introspection response. It could be `sub`, `aud` and so on.
+  # This configuration option can be a proc, lambda or any Ruby object responds
+  # to `.call` method and result of it's invocation must be a Hash.
+  #
+  # custom_introspection_response do |token, context|
+  #   {
+  #     "sub": "Z5O3upPC88QrAjx00dis",
+  #     "aud": "https://protected.example.net/resource",
+  #     "username": User.find(token.resource_owner_id).username
+  #   }
+  # end
+  #
+  # or
+  #
+  # custom_introspection_response CustomIntrospectionResponder
+
   # Specify what grant flows are enabled in array of Strings. The valid
   # strings and the flows they enable are:
   #
@@ -195,7 +277,7 @@ Doorkeeper.configure do
   # end
 
   # Hook into Authorization flow in order to implement Single Sign Out
-  # or add ny other functionality.
+  # or add any other functionality.
   #
   # before_successful_authorization do |controller|
   #   Rails.logger.info(params.inspect)
