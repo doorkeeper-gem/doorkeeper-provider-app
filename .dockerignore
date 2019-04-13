@@ -1,0 +1,5 @@
+.vscode
+.rspec
+log
+tmp
+spec
