@@ -1,6 +1,7 @@
 # Doorkeeper Provider App
 
 [![Build Status](https://api.travis-ci.org/doorkeeper-gem/doorkeeper-provider-app.svg?branch=master)](http://travis-ci.org/doorkeeper-gem/doorkeeper-provider-app)
+[![Build Status](https://semaphoreci.com/api/v1/doorkeeper-gem/doorkeeper-provider-app/branches/master/badge.svg)](https://semaphoreci.com/doorkeeper-gem/doorkeeper-provider-app)
 
 This app is an example of an OAuth 2 provider using [Doorkeeper gem](https://github.com/doorkeeper-gem/doorkeeper), [Rails 5.2](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise). Check out the [app hosted on heroku](http://doorkeeper-provider.herokuapp.com/) for a live demo.
 
