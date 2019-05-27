@@ -146,7 +146,7 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
-    rollbar (2.19.4)
+    rollbar (2.20.0)
       multi_json
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
