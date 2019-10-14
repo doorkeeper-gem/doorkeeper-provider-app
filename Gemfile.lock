@@ -110,8 +110,8 @@ GEM
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    parallel (1.17.0)
-    parser (2.6.4.1)
+    parallel (1.18.0)
+    parser (2.6.5.0)
       ast (~> 2.4.0)
     pg (1.1.4)
     pry (0.12.2)
@@ -190,7 +190,7 @@ GEM
     rubocop-rails (2.3.2)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
-    rubocop-rails_config (0.7.2)
+    rubocop-rails_config (0.7.3)
       railties (>= 3.0)
       rubocop (~> 0.74)
       rubocop-performance (~> 1.3)
@@ -216,7 +216,7 @@ GEM
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
-    zeitwerk (2.1.10)
+    zeitwerk (2.2.0)
 
 PLATFORMS
   ruby
