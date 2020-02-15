@@ -1,39 +1,37 @@
 <div class="row">
   <div class="col">
-    <h1 class="display-4">Doorkeeper <span class="badge badge-primary"><%= Doorkeeper.gem_version %></span></h1>
-
-    <p class="lead">
-      <a href="https://github.com/applicake/doorkeeper">Doorkeeper</a> is an <a href="http://oauth.net/2/">OAuth 2</a> provider for <a href="http://rubyonrails.org/">Rails</a>.
-      It is built on top of <a href="https://guides.rubyonrails.org/engines.html">Rails Engines</a>.
-      Current Rails version: <span class="badge badge-success"><%= Rails::VERSION::STRING %></span>
-    </p>
-
-    <p>
-      <iframe src="https://ghbtns.com/github-btn.html?user=doorkeeper-gem&repo=doorkeeper&type=star&count=true&size=large" frameborder="0" scrolling="0" width="80px" height="30px"></iframe>
-      <iframe src="https://ghbtns.com/github-btn.html?user=doorkeeper-gem&repo=doorkeeper&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="100px" height="30px"></iframe>
-    </p>
+    <ol>
+      <% if !current_user %>
+        <li>If you haven't already, <%= link_to "deploy this example app to Heroku", "https://github.com/kevinebaugh/doorkeeper-provider-app-ifttt" %>.
+        <li>Then, <%= link_to "sign up", new_user_registration_path %>.</li>
+      <% else %>
+        <span style="text-decoration: line-through">
+          <li>If you haven't already, <%= link_to "deploy this example app to Heroku", "https://github.com/kevinebaugh/doorkeeper-provider-app-ifttt" %>.</li>
+          <li>Then, <%= link_to "sign up", new_user_registration_path %>.</li>
+        </span>
+        <li><%= link_to 'Create a new OAuth application', oauth_applications_path %></li>
+        <ul>
+          <li>Name: choose anything you'd like</li>
+          <li>Set the <i>Redirect URI</i> to the <i>Redirect URL</i> found on <%= link_to "your service's authentication page", "https://platform.ifttt.com/mkt/api/authentication" %>.</li>
+          <li>Scopes: leave blank</li>
+        </ul>
+        <li>On <%= link_to "your service's authentication page", "https://platform.ifttt.com/mkt/api/authentication" %>:</li>
+        <ul>
+          <li>Choose <i>My API has users with expiring OAuth2 access tokens and uses refresh tokens</i>.</li>
+          <li>Set the <i>Client ID</i> and <i>Client secret</i> to the values of the client you just created.</li>
+          <li>Set <i>Authorization URL</i> to <code>https://PATH-TO-YOUR.herokuapp.com/oauth/authorize?scope=</code></li>
+          <li>Set <i>Token URL</i> to <code>https://PATH-TO-YOUR.herokuapp.com/oauth/token</code></li>
+        </ul>
+        <li>On <%= link_to "your service's API page", "https://platform.ifttt.com/mkt/api" %>, set the <i>IFTTT API URL</i> to <code>https://PATH-TO-YOUR.herokuapp.com</code></li>
+        <li>Run <%= link_to "your service's authentication test", "https://platform.ifttt.com/mkt/api/authentication" %>. It should <span style="color: green">pass</span>.</li>
+        <li>See your IFTTT service listed under your <%= link_to 'authorized apps', oauth_authorized_applications_path %>.</li>
+      <% end %>
+    </ol>
   </div>
 </div>
 
-<div class="row">
-  <div class="col">
-    <% if current_user %>
-      <p>You're not logged in, follow the links below to explore the example app.</p>
-      <p>
-        <%= link_to 'Projects', projects_path, class: 'btn btn-primary'%>
-        <%= link_to 'OAuth Applications', oauth_applications_path, class: 'btn btn-primary'%>
-        <%= link_to 'Authorized Apps', oauth_authorized_applications_path, class: 'btn btn-primary'%>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-secondary'%>
-      </p>
-    <% else %>
-      <p>Sign in below to start using the example app:</p>
-      <p><%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary' %></p>
-    <% end %>
-  </div>
-</div>
-
-<div class="row">
+<!-- <div class="row">
   <div class="col">
     <%= readme_to_markdown %>
   </div>
-</div>
+</div> -->
