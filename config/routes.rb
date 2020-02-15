@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'ifttt/v1/user/info' => 'ifttt#user_info'
   use_doorkeeper do
     controllers applications: 'oauth_applications'
   end
