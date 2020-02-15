@@ -25,26 +25,6 @@
   <div class="form-group">
     <%= f.label :redirect_uri %>
     <%= f.text_area :redirect_uri, class: 'form-control' %>
-
-    <small class="form-text text-muted">
-      <%= t('doorkeeper.applications.help.redirect_uri') %>
-    </small>
-    <% if Doorkeeper.configuration.native_redirect_uri %>
-      <small class="form-text text-muted">
-        <%= raw t('doorkeeper.applications.help.native_redirect_uri', native_redirect_uri: content_tag(:code) { Doorkeeper.configuration.native_redirect_uri }) %>
-      </small>
-    <% end %>
-  </div>
-
-  <div class="form-group">
-    <div class="form-check">
-      <%= f.check_box :confidential, class: 'form-check-input' %>
-      <%= f.label :confidential, class: 'form-check-label' %>
-    </div>
-    <%= doorkeeper_errors_for application, :confidential %>
-    <small class="form-text text-muted">
-      <%= t('doorkeeper.applications.help.confidential') %>
-    </small>
   </div>
 
   <div class="form-group">
