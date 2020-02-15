@@ -1,5 +1,7 @@
 # Doorkeeper Provider App
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 [![Build Status](https://api.travis-ci.org/doorkeeper-gem/doorkeeper-provider-app.svg?branch=master)](http://travis-ci.org/doorkeeper-gem/doorkeeper-provider-app)
 [![Build Status](https://semaphoreci.com/api/v1/doorkeeper-gem/doorkeeper-provider-app/branches/master/badge.svg)](https://semaphoreci.com/doorkeeper-gem/doorkeeper-provider-app)
 
