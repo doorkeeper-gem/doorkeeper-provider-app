@@ -2,6 +2,9 @@
   "name": "Doorkeeper Provider App for IFTTT",
   "description": "Based on the original Doorkeeper Provider App example, with a few updates to integrate with IFTTT seamlessly.",
   "repository": "https://github.com/kevinebaugh/doorkeeper-provider-app-ifttt",
-  "logo": "https://ifttt.com/ifttt-banner.png",
-  "keywords": ["ifttt"]
+  "logo": "https://ifttt.com/favicon-coast.png",
+  "keywords": ["ifttt"],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
 }
