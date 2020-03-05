@@ -2,29 +2,29 @@
   <div class="col">
     <ol>
       <% if !current_user %>
-        <li>If you haven't already, <%= link_to "deploy this example app to Heroku", "https://github.com/kevinebaugh/doorkeeper-provider-app-ifttt" %>.
+        <li>If you haven't already, <%= link_to "deploy this example app to Heroku", "https://github.com/kevinebaugh/doorkeeper-provider-app-ifttt", target: '_blank' %>.
         <li>Then, <%= link_to "sign up", new_user_registration_path %>.</li>
       <% else %>
         <span style="text-decoration: line-through">
-          <li>If you haven't already, <%= link_to "deploy this example app to Heroku", "https://github.com/kevinebaugh/doorkeeper-provider-app-ifttt" %>.</li>
+          <li>If you haven't already, <%= link_to "deploy this example app to Heroku", "https://github.com/kevinebaugh/doorkeeper-provider-app-ifttt", target: '_blank' %>.</li>
           <li>Then, <%= link_to "sign up", new_user_registration_path %>.</li>
         </span>
-        <li><%= link_to 'Create a new OAuth application', oauth_applications_path %></li>
+        <li><%= link_to 'Create a new OAuth application', oauth_applications_path, target: '_blank' %></li>
         <ul>
           <li>Name: choose anything you'd like</li>
-          <li>Set the <i>Redirect URI</i> to the <i>Redirect URL</i> found on <%= link_to "your service's authentication page", "https://platform.ifttt.com/mkt/api/authentication" %>.</li>
+          <li>Set the <i>Redirect URI</i> to the <i>Redirect URL</i> found on <%= link_to "your service's authentication page", "https://platform.ifttt.com/mkt/api/authentication", target: '_blank' %>.</li>
           <li>Scopes: leave blank</li>
         </ul>
-        <li>On <%= link_to "your service's authentication page", "https://platform.ifttt.com/mkt/api/authentication" %>:</li>
+        <li>On <%= link_to "your service's authentication page", "https://platform.ifttt.com/mkt/api/authentication", target: '_blank' %>:</li>
         <ul>
           <li>Choose <i>My API has users with expiring OAuth2 access tokens and uses refresh tokens</i>.</li>
           <li>Set the <i>Client ID</i> and <i>Client secret</i> to the values of the client you just created.</li>
           <li>Set <i>Authorization URL</i> to <code>https://PATH-TO-YOUR.herokuapp.com/oauth/authorize?scope=</code></li>
           <li>Set <i>Token URL</i> to <code>https://PATH-TO-YOUR.herokuapp.com/oauth/token</code></li>
         </ul>
-        <li>On <%= link_to "your service's API page", "https://platform.ifttt.com/mkt/api" %>, set the <i>IFTTT API URL</i> to <code>https://PATH-TO-YOUR.herokuapp.com</code></li>
-        <li>Run <%= link_to "your service's authentication test", "https://platform.ifttt.com/mkt/api/authentication" %>. It should <span style="color: green">pass</span>.</li>
-        <li>See your IFTTT service listed under your <%= link_to 'authorized apps', oauth_authorized_applications_path %>.</li>
+        <li>On <%= link_to "your service's API page", "https://platform.ifttt.com/mkt/api", target: '_blank' %>, set the <i>IFTTT API URL</i> to <code>https://PATH-TO-YOUR.herokuapp.com</code></li>
+        <li>Run <%= link_to "your service's authentication test", "https://platform.ifttt.com/mkt/api/authentication", target: '_blank' %>. It should <span style="color: green">pass</span>.</li>
+        <li>See your IFTTT service listed under your <%= link_to 'authorized apps', oauth_authorized_applications_path, target: '_blank' %>.</li>
       <% end %>
     </ol>
   </div>
