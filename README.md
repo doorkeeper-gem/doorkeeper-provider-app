@@ -65,11 +65,13 @@ namespace :api do
 end
 ```
 
-We namespace the API controllers to avoid name clashing and collisions between your existing application and the API. This way, you can make changes to your application without messing up with the API's behavior.
+We namespace the API controllers to avoid name clashing and collisions between your existing application and the API.
+This way, you can make changes to your application without messing up with the API's behavior.
 
 You can find all controllers under `/app/controllers/api/v1` folder.
 
-The `api_controller.rb` works as a parent class to the other controllers. It only defines a method that returns the current resource owner, based on the access token:
+The `api_controller.rb` works as a parent class to the other controllers. It only defines a method that returns
+the current resource owner, based on the access token:
 
 ``` ruby
 def current_resource_owner
@@ -81,7 +83,8 @@ This is required if you want to return data based on the current user, like in `
 
 ### Make Access Token Required
 
-To make your API only available for OAuth users, you need to tell doorkeeper to require an access token in your api controller, like this:
+To make your API only available for OAuth users, you need to tell doorkeeper to require an access token in
+your api controller, like this:
 
 ``` ruby
 module Api::V1
@@ -103,4 +106,5 @@ If you attempt to access any of the protected resources without an proper access
 
 You can manage all client applications in `/oauth/applications`.
 
-If you want to create a client application, check out [this example using Sinatra](http://doorkeeper-sinatra.herokuapp.com) and this [another one using Rails and Devise](http://doorkeeper-devise.herokuapp.com).
+If you want to create a client application, check out [this example using Sinatra](http://doorkeeper-sinatra.herokuapp.com)
+and this [another one using Rails and Devise](http://doorkeeper-devise.herokuapp.com).

@@ -2,7 +2,7 @@
 
 source "http://rubygems.org"
 
-ruby "2.6.2"
+ruby "2.6.5"
 
 gem "rails", "~> 6.0"
 gem "doorkeeper", "~> 5.4.0"
