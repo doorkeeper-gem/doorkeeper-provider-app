@@ -196,7 +196,7 @@ GEM
       activesupport
       rack (>= 1.1)
       rubocop (>= 0.72.0)
-    rubocop-rails_config (0.12.2)
+    rubocop-rails_config (0.12.3)
       railties (>= 5.0)
       rubocop (~> 0.82)
       rubocop-performance (~> 1.3)
