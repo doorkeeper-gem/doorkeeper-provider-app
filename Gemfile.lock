@@ -74,10 +74,10 @@ GEM
       railties (>= 5)
     erubi (1.9.0)
     execjs (2.7.0)
-    factory_bot (6.0.0)
+    factory_bot (6.1.0)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.0.0)
-      factory_bot (~> 6.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
     faker (2.13.0)
       i18n (>= 1.6, < 2)
@@ -106,7 +106,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.1)
     nio4r (2.5.2)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     parallel (1.19.2)
@@ -222,7 +222,7 @@ GEM
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.3.0)
+    zeitwerk (2.3.1)
 
 PLATFORMS
   ruby
