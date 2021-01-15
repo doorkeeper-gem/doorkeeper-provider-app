@@ -4,7 +4,7 @@ source "http://rubygems.org"
 
 ruby "2.6.5"
 
-gem "rails", "~> 6.0"
+gem "rails", "~> 6.1"
 gem "doorkeeper", "~> 5.4.0"
 gem "devise", "~> 4.7"
 
