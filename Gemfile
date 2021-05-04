@@ -6,7 +6,7 @@ ruby "2.6.5"
 
 gem "rails", "~> 6.1"
 gem "doorkeeper", "~> 5.5.1"
-gem "devise", "~> 4.7"
+gem "devise", "~> 4.8"
 
 gem "faker"
 gem "jquery-rails"
