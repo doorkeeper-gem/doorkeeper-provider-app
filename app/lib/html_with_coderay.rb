@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-puts "!!"
+
 class HtmlWithCoderay < Redcarpet::Render::HTML
   def block_code(code, language)
     language = language.blank? ? "text" : language
