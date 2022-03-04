@@ -7,5 +7,9 @@ module Api::V1
     def me
       render json: current_resource_owner
     end
+
+    def zapier
+      render json: { message: 'Zapier POC successful'}
+    end
   end
 end
