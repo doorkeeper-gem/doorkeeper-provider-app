@@ -13,7 +13,7 @@ For more information [about the gem](https://github.com/doorkeeper-gem/doorkeepe
 
 First clone the [repository from GitHub](https://github.com/doorkeeper-gem/doorkeeper-provider-app):
 
-    git clone git://github.com/doorkeeper-gem/doorkeeper-provider-app.git
+    git clone git@github.com:doorkeeper-gem/doorkeeper-provider-app.git
 
 Install all dependencies with:
 
