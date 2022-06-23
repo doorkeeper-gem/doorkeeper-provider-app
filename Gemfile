@@ -16,7 +16,7 @@ gem "coderay"
 gem "redcarpet"
 
 gem "uglifier"
-gem "pg", "~> 1.3", group: :production
+gem "pg", "~> 1.4", group: :production
 gem "rollbar"
 
 gem "puma"
