@@ -20,7 +20,7 @@ jobs:
       matrix:
         os: [ ubuntu-latest ]
         ruby:
-          - '3.1.0'
+          - '3.2.0'
     steps:
       - name: Repo checkout
         uses: actions/checkout@v2
