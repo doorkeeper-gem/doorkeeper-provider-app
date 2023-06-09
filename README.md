@@ -17,7 +17,7 @@ First clone the [repository from GitHub](https://github.com/doorkeeper-gem/doork
 
 Install all dependencies with:
 
-    bundle install
+    bin/bundle install
 
 After that you're almost ready to go.
 
@@ -25,7 +25,7 @@ After that you're almost ready to go.
 
 The configuration is quite simple, all you need to do is run:
 
-    bundle exec rake db:setup
+    bin/rails db:setup
 
 This will generate all necessary tables, create fake data, create an user and a client application.
 
@@ -35,7 +35,7 @@ The generated user email is `user@example.com` and password is `doorkeeper`.
 
 The application `id` and `secret` will show up on terminal when the script ends.
 
-After that, you can just fire up the `rails server` and you're ready to go.
+After that, you can just fire up the `bin/rails server` and you're ready to go.
 
 ## OAuth Endpoint
 
