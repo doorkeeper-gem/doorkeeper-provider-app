@@ -1,9 +1,8 @@
 # Doorkeeper Provider App
 
 [![CI](https://github.com/doorkeeper-gem/doorkeeper-provider-app/actions/workflows/ci.yml/badge.svg)](https://github.com/doorkeeper-gem/doorkeeper-provider-app/actions/workflows/ci.yml)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=doorkeeper-provider)]((https://heroku-badge.herokuapp.com/?app=doorkeeper-provider))
 
-This app is an example of an OAuth 2 provider using [Doorkeeper gem](https://github.com/doorkeeper-gem/doorkeeper), [Rails 7.x](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise). Check out the [app hosted on heroku](http://doorkeeper-provider.herokuapp.com/) for a live demo.
+This app is an example of an OAuth 2 provider using [Doorkeeper gem](https://github.com/doorkeeper-gem/doorkeeper), [Rails 7.x](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise).
 
 ## About Doorkeeper Gem
 
@@ -105,6 +104,3 @@ If you attempt to access any of the protected resources without an proper access
 ## Client applications
 
 You can manage all client applications in `/oauth/applications`.
-
-If you want to create a client application, check out [this example using Sinatra](http://doorkeeper-sinatra.herokuapp.com)
-and this [another one using Rails and Devise](http://doorkeeper-devise.herokuapp.com).
