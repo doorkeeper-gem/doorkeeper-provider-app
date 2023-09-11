@@ -124,7 +124,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.4)
-    minitest (5.19.0)
+    minitest (5.20.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -242,7 +242,7 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
-    rubocop-rails_config (1.14.0)
+    rubocop-rails_config (1.14.1)
       railties (>= 5.0)
       rubocop (>= 1.48.0)
       rubocop-ast (>= 1.26.0)
