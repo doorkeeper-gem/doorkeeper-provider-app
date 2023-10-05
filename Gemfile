@@ -4,7 +4,7 @@ source "http://rubygems.org"
 
 ruby "3.2.0"
 
-gem "rails", "~> 7.0"
+gem "rails", "~> 7.1"
 gem "doorkeeper", "~> 5.6.6"
 gem "devise", "~> 4.9"
 gem "sprockets-rails", require: "sprockets/railtie"
