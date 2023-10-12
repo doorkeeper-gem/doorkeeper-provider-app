@@ -16,7 +16,6 @@ gem "coderay"
 gem "redcarpet"
 
 gem "uglifier"
-gem "rollbar"
 
 gem "puma"
 gem "rack-timeout"
@@ -25,8 +24,11 @@ gem "mysql2"
 gem "dotenv-rails", require: "dotenv/rails-now", groups: [:development, :test]
 gem "jsbundling-rails", "~> 1.2.1"
 gem "cssbundling-rails", "~> 1.3"
+gem "turbo-rails"
 
 group :development do
+  gem "web-console"
+
   gem "listen"
   gem "rubocop-performance"
   gem "rubocop-rails_config"
@@ -39,5 +41,7 @@ group :test do
 end
 
 group :development, :test do
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
   gem "pry-rails"
 end
