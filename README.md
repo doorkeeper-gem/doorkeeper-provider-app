@@ -18,7 +18,9 @@ Install all dependencies with:
 
     bin/bundle install
 
-After that you're almost ready to go.
+For production : 
+
+    RAILS_ENV=production bin/rails assets:precompile
 
 ## Configuration
 
@@ -104,3 +106,4 @@ If you attempt to access any of the protected resources without an proper access
 ## Client applications
 
 You can manage all client applications in `/oauth/applications`.
+
