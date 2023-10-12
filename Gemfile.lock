@@ -99,6 +99,10 @@ GEM
     diff-lcs (1.5.0)
     doorkeeper (5.6.6)
       railties (>= 5)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.1.1)
       ruby2_keywords
     erubi (1.12.0)
@@ -313,6 +317,7 @@ DEPENDENCIES
   database_cleaner
   devise (~> 4.9)
   doorkeeper (~> 5.6.6)
+  dotenv-rails
   factory_bot_rails
   faker
   jquery-rails

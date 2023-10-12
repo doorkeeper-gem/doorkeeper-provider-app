@@ -16,11 +16,13 @@ gem "coderay"
 gem "redcarpet"
 
 gem "uglifier"
-gem "mysql2"
 gem "rollbar"
 
 gem "puma"
 gem "rack-timeout"
+
+gem "mysql2"
+gem "dotenv-rails", require: "dotenv/rails-now", groups: [:development, :test]
 
 group :development do
   gem "listen"

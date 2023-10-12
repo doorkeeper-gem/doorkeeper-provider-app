@@ -5,3 +5,4 @@ tmp/
 .sass-cache/
 spec/examples.txt
 .idea/
+.env
