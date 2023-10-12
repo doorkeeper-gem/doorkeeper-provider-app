@@ -1,39 +1,6 @@
 <div class="row">
   <div class="col">
-    <h1 class="display-4">Doorkeeper <span class="badge badge-primary"><%= Doorkeeper::VERSION::STRING %></span></h1>
-
-    <p class="lead">
-      <a href="https://github.com/applicake/doorkeeper">Doorkeeper</a> is an <a href="http://oauth.net/2/">OAuth 2</a> provider for <a href="http://rubyonrails.org/">Rails</a>.
-      It is built on top of <a href="https://guides.rubyonrails.org/engines.html">Rails Engines</a>.
-      Current Rails version: <span class="badge badge-success"><%= Rails::VERSION::STRING %></span>
-    </p>
-
-    <p>
-      <iframe src="https://ghbtns.com/github-btn.html?user=doorkeeper-gem&repo=doorkeeper&type=star&count=true&size=large" frameborder="0" scrolling="0" width="80px" height="30px"></iframe>
-      <iframe src="https://ghbtns.com/github-btn.html?user=doorkeeper-gem&repo=doorkeeper&type=watch&count=true&size=large&v=2" frameborder="0" scrolling="0" width="100px" height="30px"></iframe>
-    </p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <% if current_user %>
-      <p>You're not logged in, follow the links below to explore the example app.</p>
-      <p>
-        <%= link_to 'Projects', projects_path, class: 'btn btn-primary'%>
-        <%= link_to 'OAuth Applications', oauth_applications_path, class: 'btn btn-primary'%>
-        <%= link_to 'Authorized Apps', oauth_authorized_applications_path, class: 'btn btn-primary'%>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-secondary'%>
-      </p>
-    <% else %>
-      <p>Sign in below to start using the example app:</p>
-      <p><%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary' %></p>
+    <% if user_signed_in? %>
+      Welcome
     <% end %>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <%= readme_to_markdown %>
-  </div>
 </div>
