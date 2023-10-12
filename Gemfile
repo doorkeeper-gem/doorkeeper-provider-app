@@ -16,7 +16,7 @@ gem "coderay"
 gem "redcarpet"
 
 gem "uglifier"
-gem "pg", "~> 1.5", group: :production
+gem "mysql2"
 gem "rollbar"
 
 gem "puma"
@@ -35,6 +35,5 @@ group :test do
 end
 
 group :development, :test do
-  gem "sqlite3"
   gem "pry-rails"
 end
