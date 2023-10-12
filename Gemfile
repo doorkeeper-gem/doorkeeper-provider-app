@@ -23,6 +23,8 @@ gem "rack-timeout"
 
 gem "mysql2"
 gem "dotenv-rails", require: "dotenv/rails-now", groups: [:development, :test]
+gem "jsbundling-rails", "~> 1.2.1"
+gem "cssbundling-rails", "~> 1.3"
 
 group :development do
   gem "listen"

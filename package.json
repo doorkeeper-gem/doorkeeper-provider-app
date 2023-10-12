@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "private": "true",
+  "scripts": {
+    "build": "bun bun.config.js"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
+    "sass": "^1.69.3"
+  }
+}
