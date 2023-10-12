@@ -142,6 +142,7 @@ GEM
     mini_portile2 (2.8.4)
     minitest (5.20.0)
     mutex_m (0.1.2)
+    mysql2 (0.5.5)
     net-imap (0.4.0)
       date
       net-protocol
@@ -162,7 +163,6 @@ GEM
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
-    pg (1.5.4)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -288,9 +288,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.6)
-      mini_portile2 (~> 2.8.0)
-    sqlite3 (1.6.6-x86_64-linux)
     stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
@@ -320,7 +317,7 @@ DEPENDENCIES
   faker
   jquery-rails
   listen
-  pg (~> 1.5)
+  mysql2
   pry-rails
   puma
   rack-timeout
@@ -331,11 +328,10 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails_config
   sprockets-rails
-  sqlite3
   uglifier
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.1.2p20
 
 BUNDLED WITH
    2.4.6
