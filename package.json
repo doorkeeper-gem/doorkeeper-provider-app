@@ -2,7 +2,8 @@
   "name": "app",
   "private": "true",
   "scripts": {
-    "build": "bun bun.config.js"
+    "build": "bun bun.config.js",
+    "build:css": "sass ./app/assets/stylesheets/application.sass:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
