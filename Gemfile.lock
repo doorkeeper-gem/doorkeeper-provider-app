@@ -98,7 +98,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
-    doorkeeper (5.6.6)
+    doorkeeper (5.6.7)
       railties (>= 5)
     drb (2.2.0)
       ruby2_keywords
@@ -117,7 +117,7 @@ GEM
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
-    irb (1.9.0)
+    irb (1.9.1)
       rdoc
       reline (>= 0.3.8)
     jquery-rails (4.6.0)
@@ -316,7 +316,7 @@ DEPENDENCIES
   coderay
   database_cleaner
   devise (~> 4.9)
-  doorkeeper (~> 5.6.6)
+  doorkeeper (~> 5.6.7)
   factory_bot_rails
   faker
   jquery-rails
