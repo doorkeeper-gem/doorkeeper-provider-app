@@ -98,7 +98,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
-    doorkeeper (5.6.8)
+    doorkeeper (5.6.9)
       railties (>= 5)
     drb (2.2.0)
       ruby2_keywords
@@ -117,7 +117,7 @@ GEM
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
-    irb (1.11.1)
+    irb (1.11.2)
       rdoc
       reline (>= 0.4.2)
     jquery-rails (4.6.0)
@@ -141,7 +141,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.21.2)
+    minitest (5.22.2)
     mutex_m (0.2.0)
     net-imap (0.4.9.1)
       date
@@ -305,7 +305,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.6.12)
+    zeitwerk (2.6.13)
 
 PLATFORMS
   ruby
@@ -315,7 +315,7 @@ DEPENDENCIES
   coderay
   database_cleaner
   devise (~> 4.9)
-  doorkeeper (~> 5.6.8)
+  doorkeeper (~> 5.6.9)
   factory_bot_rails
   faker
   jquery-rails
