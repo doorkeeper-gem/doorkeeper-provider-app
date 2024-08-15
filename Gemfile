@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-source "http://rubygems.org"
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.0"
 
@@ -31,7 +32,7 @@ end
 group :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
-  gem "database_cleaner"
+  gem 'database_cleaner-active_record'
 end
 
 group :development, :test do
