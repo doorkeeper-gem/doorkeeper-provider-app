@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.0"
 
-gem "rails", "~> 7.2"
+gem "rails", "~> 8.0"
 gem "doorkeeper", "~> 5.8.2"
 gem "devise", "~> 4.9"
 gem "sprockets-rails", require: "sprockets/railtie"
