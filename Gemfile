@@ -7,7 +7,7 @@ ruby "3.2.0"
 
 gem "rails", "~> 7.2"
 gem "doorkeeper", "~> 5.8.2"
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 gem "sprockets-rails", require: "sprockets/railtie"
 
 gem "faker"
