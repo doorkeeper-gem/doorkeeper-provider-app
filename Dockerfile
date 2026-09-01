@@ -3,7 +3,7 @@ FROM ruby:3.2.0
 LABEL maintainer="felipe@yerba.dev"
 
 RUN apt-get update && apt-get install -y nodejs --no-install-recommends
-RUN gem install bundler:2.2.21
+RUN gem install bundler:2.4.6
 
 WORKDIR /usr/src/app
 
