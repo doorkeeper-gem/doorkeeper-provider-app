@@ -96,7 +96,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.6.2)
-    doorkeeper (5.8.2)
+    doorkeeper (5.9.6)
       railties (>= 5)
     drb (2.2.3)
     erb (6.0.7)
@@ -343,7 +343,7 @@ DEPENDENCIES
   coderay
   database_cleaner-active_record
   devise (~> 5.0)
-  doorkeeper (~> 5.8.2)
+  doorkeeper (~> 5.9.6)
   factory_bot_rails
   faker
   jquery-rails
