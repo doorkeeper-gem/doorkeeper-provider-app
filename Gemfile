@@ -17,6 +17,7 @@ gem "coderay"
 gem "redcarpet"
 
 gem "uglifier"
+gem "mini_racer"
 gem "pg", "~> 1.6", group: :production
 gem "rollbar"
 
