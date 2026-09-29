@@ -4,6 +4,8 @@
 
 This app is an example of an OAuth 2 provider using [Doorkeeper gem](https://github.com/doorkeeper-gem/doorkeeper), [Rails 7.x](http://rubyonrails.org/) and [Devise](https://github.com/plataformatec/devise).
 
+Demo app hosted on [Miget](https://miget.com).
+
 ## About Doorkeeper Gem
 
 For more information [about the gem](https://github.com/doorkeeper-gem/doorkeeper), [documentation](https://github.com/doorkeeper-gem/doorkeeper#readme), [wiki](https://github.com/doorkeeper-gem/doorkeeper/wiki/_pages) and another resources, check out the project [on GitHub](https://github.com/doorkeeper-gem/doorkeeper)
