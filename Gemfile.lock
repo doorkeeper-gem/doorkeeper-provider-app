@@ -110,6 +110,7 @@ GEM
     faker (3.8.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.3)
+    ffi (1.17.3-arm64-darwin)
     ffi (1.17.3-x86_64-linux-gnu)
     globalid (1.4.0)
       activesupport (>= 6.1)
@@ -127,6 +128,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (3.0.2)
     language_server-protocol (3.17.0.6)
+    libv8-node (24.12.0.1)
+    libv8-node (24.12.0.1-arm64-darwin)
+    libv8-node (24.12.0.1-x86_64-linux)
     lint_roller (1.1.0)
     listen (3.10.0)
       logger
@@ -146,6 +150,8 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
+    mini_racer (0.22.1)
+      libv8-node (~> 24.12.0.1)
     minitest (6.0.6)
       drb (~> 2.0)
       prism (~> 1.5)
@@ -162,6 +168,8 @@ GEM
     nokogiri (1.19.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    nokogiri (1.19.4-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-gnu)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -170,6 +178,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.6.3)
+    pg (1.6.3-arm64-darwin)
     pg (1.6.3-x86_64-linux)
     pp (0.6.4)
       prettyprint
@@ -305,8 +314,9 @@ GEM
       rubocop-rails (~> 2.30)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
-    sprockets (4.2.1)
-      concurrent-ruby (~> 1.0)
+    sprockets (4.4.1)
+      concurrent-ruby (~> 1.1)
+      logger
       rack (>= 2.2.4, < 4)
     sprockets-rails (3.5.2)
       actionpack (>= 6.1)
@@ -314,6 +324,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (2.9.6)
       mini_portile2 (~> 2.8.0)
+    sqlite3 (2.9.6-arm64-darwin)
     sqlite3 (2.9.6-x86_64-linux-gnu)
     thor (1.5.0)
     timeout (0.6.1)
@@ -336,6 +347,7 @@ GEM
     zeitwerk (2.8.3)
 
 PLATFORMS
+  arm64-darwin
   ruby
   x86_64-linux
 
@@ -348,6 +360,7 @@ DEPENDENCIES
   faker
   jquery-rails
   listen
+  mini_racer
   pg (~> 1.6)
   pry-rails
   puma
@@ -363,7 +376,7 @@ DEPENDENCIES
   uglifier
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.3.12p206
 
 BUNDLED WITH
    2.4.6
