@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-owner = User.find_or_create_by!(email: 'user@example.com') do |user|
+owner = User.find_or_create_by!(email: User::SEED_EMAIL) do |user|
   user.password = 'doorkeeper'
   user.password_confirmation = 'doorkeeper'
 end
