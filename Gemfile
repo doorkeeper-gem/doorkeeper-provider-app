@@ -18,7 +18,7 @@ gem "redcarpet"
 
 gem "uglifier"
 gem "mini_racer"
-gem "pg", "~> 1.6", group: :production
+gem "pg", "~> 1.7", group: :production
 gem "rollbar"
 
 gem "puma"
