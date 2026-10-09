@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
 
   # Project administration via UI
