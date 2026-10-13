@@ -63,6 +63,8 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
+    # `rake db:setup` loads db/seeds.rb, so remove the seed data before the first example.
+    DatabaseCleaner.clean_with(:truncation)
   end
 
   config.around(:each) do |example|

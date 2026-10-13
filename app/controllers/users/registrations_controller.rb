@@ -3,6 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  before_action :forbid_seed_user_changes, only: %i[update destroy]
 
   # GET /resource/sign_up
   # def new
@@ -38,7 +39,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
+    # The seed user's credentials are public, so anyone can sign in as that
+    # user. Keep the account intact for other visitors of the demo.
+    def forbid_seed_user_changes
+      return unless current_user.seed?
+
+      redirect_to edit_user_registration_path,
+                  alert: "The demo user account cannot be changed or deleted."
+    end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

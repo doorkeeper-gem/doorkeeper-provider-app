@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  # Email of the demo user created by db/seeds.rb
+  SEED_EMAIL = "user@example.com"
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
@@ -25,4 +28,8 @@ class User < ApplicationRecord
            as: :owner
 
   has_many :projects, dependent: :delete_all
+
+  def seed?
+    email == SEED_EMAIL
+  end
 end
