@@ -44,13 +44,19 @@ The configuration is quite simple, all you need to do is run:
 
     bin/rails db:setup
 
-This will generate all necessary tables, create a user and a client application.
+This will generate all necessary tables, create a user and the client applications used by the demo clients.
 
 ## Seed data
 
 The generated user email is `user@example.com` and password is `doorkeeper`.
 
-The application `uid` and `secret` will show up on terminal when the script ends.
+Three client applications are created with fixed credentials, so the hosted demo clients keep working whenever the demo database is re-seeded:
+
+- `Doorkeeper Devise Client` (confidential) for [doorkeeper-devise-client](https://github.com/doorkeeper-gem/doorkeeper-devise-client)
+- `Doorkeeper Sinatra Client (confidential)` for [doorkeeper-sinatra-client](https://github.com/doorkeeper-gem/doorkeeper-sinatra-client)
+- `Doorkeeper Sinatra Client (public)` for [doorkeeper-sinatra-client](https://github.com/doorkeeper-gem/doorkeeper-sinatra-client)
+
+The `uid` of each application (and the `secret` of the confidential ones) will show up on terminal when the script ends.
 
 After that, you can just fire up the `bin/rails server` and you're ready to go.
 
