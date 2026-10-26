@@ -150,7 +150,7 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    mini_racer (0.22.1)
+    mini_racer (0.22.2)
       libv8-node (~> 24.12.0.1)
     minitest (6.0.6)
       drb (~> 2.0)
