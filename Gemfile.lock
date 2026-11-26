@@ -82,7 +82,7 @@ GEM
     builder (3.3.0)
     coderay (1.1.3)
     concurrent-ruby (1.3.8)
-    connection_pool (3.0.2)
+    connection_pool (3.0.3)
     crass (1.0.8)
     database_cleaner-active_record (2.2.2)
       activerecord (>= 5.a)
@@ -96,7 +96,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.6.2)
-    doorkeeper (5.9.9)
+    doorkeeper (5.9.10)
       railties (>= 5)
     drb (2.2.3)
     erb (6.0.7)
@@ -126,7 +126,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    json (3.1.0)
+    json (3.2.0)
     language_server-protocol (3.17.0.6)
     libv8-node (24.12.0.1)
     libv8-node (24.12.0.1-arm64-darwin)
@@ -192,7 +192,7 @@ GEM
     puma (8.1.2)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.2.8)
+    rack (3.2.9)
     rack-session (2.1.2)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -355,7 +355,7 @@ DEPENDENCIES
   coderay
   database_cleaner-active_record
   devise (~> 5.0)
-  doorkeeper (~> 5.9.9)
+  doorkeeper (~> 5.9.10)
   factory_bot_rails
   faker
   jquery-rails
